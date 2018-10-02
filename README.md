@@ -6,4 +6,4 @@ A colon-delimited text file lists the VMs and the Host you would like the VMs to
 
 Example of colon-delimited text file.
 
-  vm-name1:vm-host1
+	vm-name1:vm-host1
