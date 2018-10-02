@@ -8,3 +8,5 @@ Example of colon-delimited text file.
 
 	vm-name1:vm-host1
 	vm-name2:vm-host2
+	vm-name3:vm-host2
+	vm-name4:vm-host3
