@@ -1,2 +1,2 @@
 # rubrik-vmware-dr
-Live &lt;ount specified Rubrik replicated VMs at remote site.
+Live Mount specified Rubrik replicated VMs at remote site.
