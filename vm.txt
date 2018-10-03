@@ -1,0 +1,6 @@
+vm-name1:esx-host1
+vm-name2:esx-host1
+vm-name3:esx-host2
+vm-name4:esx-host2
+vm-name5:esx-host2
+vm-name6:esx-host3
