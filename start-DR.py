@@ -14,7 +14,7 @@ import os
 # using this to disable the self-signed cert warning...it bugs me. 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# this is the name of the colon-delimeted (that doesn't sound right) text file containing vm-name:esx-host
+# this is the name of the colon-delimeted (that doesn't sound right)oh, colon-delimited text file containing vm-name:esx-host
 vm_file         = 'vm.txt'
 
 # this is to use the Windows cls system command to clear the screen. Now, if this were linux it would be 'clear'.
