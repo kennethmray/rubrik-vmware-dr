@@ -14,10 +14,10 @@ import os
 # using this to disable the self-signed cert warning...it bugs me. 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# this is the name of the colon-delimeted (that doesn't sound right) file containing vm-name:esx-host
+# this is the name of the colon-delimeted (that doesn't sound right) text file containing vm-name:esx-host
 vm_file         = 'vm.txt'
 
-# this is to use the Windows cls system command to clear the screen. Now, if this were linux it would 'clear'.
+# this is to use the Windows cls system command to clear the screen. Now, if this were linux it would be 'clear'.
 os.system('cls')
 
 # these are the prompts to gather the Rubrik Cluster Name and the appropriate credentals.
@@ -48,7 +48,7 @@ def start_replica_vm_livemount(filehandle):
         print ('\n Cancelled.\n')
         exit()
 
-# which snapshot, or point in time copy of your precious vm do we want to run over there, in DR?
+# which snapshot, or point in time copy of your precious vm do we want to run over there, in DR? Guess what? It's gonna be the latest PIT copy.
 def get_snapshot_id(vm_id):
     snaps = rubrik.get('v1', '/vmware/vm/'+vm_id+'/snapshot')
     for snap in snaps['data']:
