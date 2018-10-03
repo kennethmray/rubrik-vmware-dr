@@ -26,7 +26,11 @@ rubrik_username = input(' Please enter your Username: ')
 rubrik_password = getpass.getpass(' Please enter your Password: ')
 
 # this actually makes the connection to the Rubik Cluster, imagine that. 
-rubrik = rubrik_cdm.Connect(node_ip=rubrik_cluster, username=rubrik_username, password=rubrik_password)
+try:
+    rubrik = rubrik_cdm.Connect(node_ip=rubrik_cluster, username=rubrik_username, password=rubrik_password)
+except:
+    print('\n Error: Bad Username/Password or Unable to Connect to '+rubrik_cluster)
+    exit()
 
 # yep, this tells you what it's about to do, asks if your cool with it, and then rips apart your text file to know which vm to Live Mount where.
 # oh, and then it Live Mounts it there.
@@ -46,7 +50,7 @@ def start_replica_vm_livemount(filehandle):
         print ('\n Completed on: ['+datetime.datetime.now().strftime("%a, %d %B %Y %H:%M:%S")+']')
     else:
         print ('\n Cancelled.\n')
-        exit()
+        
 
 # which snapshot, or point in time copy of your precious vm do we want to run over there, in DR? Guess what? It's gonna be the latest PIT copy.
 def get_snapshot_id(vm_id):
@@ -54,12 +58,14 @@ def get_snapshot_id(vm_id):
     for snap in snaps['data']:
         return snap['id']
 
+
 # we have to know the Rubrik vmId of the vm that we want to Live Mount, duh!?
 def get_vm_id(vm_name):
     vms = rubrik.get('v1', '/vmware/vm')    
     for vm in vms['data']:
         if vm['name'] == vm_name:
             return vm['id']
+
 
 # this gets called to figure out the Rubrik hostId for the esx host where we want the vm to run.
 def get_host_id(host_name):
@@ -76,5 +82,4 @@ def main():
 
 # this is where we start the program, spoiler alert, it's gonna call the function above called... main.
 # and actually, up above at the top we already prompted the user for Cluster Name, Username, and Password...so, it's really already started. 
-
 main()
