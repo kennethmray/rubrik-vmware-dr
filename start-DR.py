@@ -75,5 +75,6 @@ def main():
     
 
 # this is where we start the program, spoiler alert, it's gonna call the function above called... main.
+# and actually, up above at the top we already prompted the user for Cluster Name, Username, and Password...so, it's really already started. 
 
 main()
