@@ -10,3 +10,6 @@ Example of colon-delimited text file, named vm.txt in the same folder/directory 
 	vm-name2:vm-host2
 	vm-name3:vm-host2
 	vm-name4:vm-host3
+
+Running the script on Windows: (just make sure python.exe is in the path and the vm.txt file exists with the script. 
+ python start-DR.py
