@@ -1,6 +1,6 @@
 # rubrik-vmware-dr
 
-This will 'Live Mount' user specified Rubrik replicated VMs at a remote location.
+This will 'Live Mount' user specified Rubrik replicated VMs at a remote location. (oh and the script iss in Python)
 
 A colon-delimited text file lists the VMs and the Host you would like the VMs to run. 
 
